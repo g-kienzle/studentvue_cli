@@ -144,6 +144,7 @@ class SVInfo(object):
 
 
 def main():
+    # initialize cli
     fire.Fire(SVInfo)
 
 
