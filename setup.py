@@ -3,11 +3,10 @@ import setuptools
 setuptools.setup(
     name="studentvue_cli",
     version="0.2",
-    description="A useful module",
     packages=["studentvue_cli"],  # same as name
     entry_points={"console_scripts": ["svue = studentvue_cli.studentvue_cli:main"]},
     license="MIT",
-    description = 'description',
+    description="description",
     url="https://github.com/g-kienzle/studentvue_cli",
     download_url="https://github.com/g-kienzle/studentvue_cli/archive/v0.2.tar.gz",
     package_data={"": ["config.ini"]},
