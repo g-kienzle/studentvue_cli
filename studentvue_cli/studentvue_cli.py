@@ -19,7 +19,7 @@ class SVInfo(object):
             if not os.path.exists(p) or cf.get("values", "domain") == "":
                 domain = input("District Edupoint Domain -> ")
                 cf.set("values", "domain", domain)
-                with open(p, "w") as configfile:
+                with open(p, "w+") as configfile:
                     cf.write(configfile)
             else:
                 domain = cf.get("values", "domain")
