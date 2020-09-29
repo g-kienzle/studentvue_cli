@@ -8,7 +8,7 @@ setuptools.setup(
     license="MIT",
     description="description",
     url="https://github.com/g-kienzle/studentvue_cli",
-    download_url="https://github.com/g-kienzle/studentvue_cli/archive/v0.2.tar.gz",
+    download_url="https://github.com/g-kienzle/studentvue_cli/archive/v0.3.tar.gz",
     package_data={"": ["studentvue_cli/config.ini"]},
     include_package_data=True,
     install_requires=[
@@ -17,5 +17,5 @@ setuptools.setup(
         "studentvue",
         "bullet",
         "configparser",
-    ],  # external packages as dependencies
+    ],
 )
