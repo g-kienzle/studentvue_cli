@@ -16,7 +16,7 @@ class SVInfo(object):
         if password == "":
             password = bullet.Password("Password -> ").launch()
         if domain == "":
-            if cf.get("values", "domain") == "":
+            if not os.path.exists(p) or cf.get("values", "domain") == "":
                 domain = input("District Edupoint Domain -> ")
                 cf.set("values", "domain", domain)
                 with open(p, "w") as configfile:
