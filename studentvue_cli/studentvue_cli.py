@@ -36,24 +36,37 @@ class SVInfo(object):
 
         grades = []
 
-        for c in courses:
-            assignments = (
-                c.get("Marks").get("Mark").get("Assignments").get("Assignment")
-            )
-            filtered_assignments = []
-            if assignments != None and long:
-                for assignment in assignments:
-                    filtered_assignments.append(
-                        [assignment.get("@Measure"), assignment.get("@Points")]
-                    )
-            grades.append(
-                [
-                    c.get("@Title"),
-                    c.get("Marks").get("Mark").get("@CalculatedScoreRaw"),
-                    filtered_assignments,
-                ]
-            )
 
+
+        for c in courses:
+            filtered_assignments = []
+            try:
+                assignments = (
+                    c.get("Marks").get("Mark").get("Assignments").get("Assignment")
+                )
+                if assignments != None and long:
+                    for assignment in assignments:
+                        filtered_assignments.append(
+                            [assignment.get("@Measure"), assignment.get("@Points")]
+                        )
+            except:
+                pass
+            try:
+                grades.append(
+                    [
+                        c.get("@Title"),
+                        c.get("Marks").get("Mark").get("@CalculatedScoreRaw"),
+                        filtered_assignments,
+                    ]
+                )
+            except:
+                grades.append(
+                    [
+                        c.get("@Title"),
+                        "Grade unavailable",
+                        filtered_assignments,
+                    ]
+                )
         fgrades = ""
         i = 0
         for grade in grades:
